@@ -1,0 +1,53 @@
+﻿@model DirectorioDeProductos.ASP.Models.Producto
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+<h1 class="mb-4 text-danger">Eliminar Producto</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger">
+            <div class="card-body">
+
+                <h5 class="card-title text-danger mb-3">
+                     Estás seguro de eliminar este producto?
+                </h5>
+
+                <hr />
+
+                <div class="mb-3">
+                    <strong>Id:</strong>
+                    <div>@Model.Id</div>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Nombre:</strong>
+                    <div>@Model.Nombre</div>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Precio:</strong>
+                    <div>@Model.Precio.ToString("C")</div>
+                </div>
+
+                <div class="mb-4">
+                    <strong>Categoría:</strong>
+                    <div>@Model.Categoria</div>
+                </div>
+
+                <form asp-action="EliminarConfirmado" method="post">
+                    <input asp-for="Id" type="hidden" />
+
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-danger">
+                            Eliminar
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

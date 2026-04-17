@@ -1,0 +1,44 @@
+﻿@model DirectorioDeProductos.ASP.Models.Producto
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1 class="mb-4">Detalles del Producto</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+
+                <h5 class="card-title mb-4">Información del Producto</h5>
+
+                <div class="mb-3">
+                    <strong>Id:</strong>
+                    <div>@Model.Id</div>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Nombre:</strong>
+                    <div>@Model.Nombre</div>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Precio:</strong>
+                    <div>@Model.Precio.ToString("C")</div>
+                </div>
+
+                <div class="mb-4">
+                    <strong>Categoría:</strong>
+                    <div>@Model.Categoria</div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+                    <a asp-action="Editar" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
